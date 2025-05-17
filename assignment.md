@@ -2,6 +2,7 @@
 layout: default
 title: Assignment Posts
 permalink: /categories/assignment/
+author_profile: true
 ---
 
 {% assign assignment_posts = site.posts | where_exp:"post", "post.categories contains 'assignment'" %}
