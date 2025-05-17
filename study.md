@@ -4,7 +4,7 @@ title: "Study Posts"
 permalink: /categories/study/
 author_profile: true
 sidebar:
-nav: "main"
+  nav: "main"
 ---
 
 {% assign study_posts = site.posts | where_exp: "post", "post.categories contains 'study'" %}
