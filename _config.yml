@@ -138,6 +138,15 @@ author:
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
 
+# category
+category_pages:
+  - title: "STUDY"
+    url: /categories/study/
+  - title: "ASSIGNMENT"
+    url: /categories/assignment/
+  - title: "ETC"
+    url: /categories/etc/
+    
 # Site Footer
 footer:
   links:
