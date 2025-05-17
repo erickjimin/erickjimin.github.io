@@ -1,14 +1,11 @@
 # main links
 main:
 - title: STUDY
-  children:
-    - title: Week 1
-      url: /categories/week1/
-    - title: Week 2
-      url: /categories/week2/
-    - title: Week 3
-      url: /categories/week3/
+  url: /study/
+
 - title: ASSIGNMENT
   url: /assignment/
+
 - title: ETC
   url: /etc/
+
