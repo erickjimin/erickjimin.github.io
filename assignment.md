@@ -1,8 +1,7 @@
 ---
 layout: categories
 title: "Assignment Posts"
+author_profile: true
 permalink: /categories/assignment/
 taxonomy: assignment
-author_profile: true
-excerpt: false  # 또는 `sidebar: false`
 ---
