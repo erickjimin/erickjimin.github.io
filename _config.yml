@@ -324,3 +324,9 @@ defaults:
       comments: # true
       share: true
       related: true
+
+header_pages:
+  - study.md
+  - assignment.md
+  - etc.md
+
