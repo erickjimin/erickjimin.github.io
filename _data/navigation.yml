@@ -1,11 +1,7 @@
 # main links
-main:
 - title: STUDY
-  url: /study/
-
+  url: /categories/study/
 - title: ASSIGNMENT
-  url: /assignment/
-
+  url: /categories/assignment/
 - title: ETC
-  url: /etc/
-
+  url: /categories/etc/
