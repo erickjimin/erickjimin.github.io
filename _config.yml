@@ -324,15 +324,3 @@ defaults:
       comments: # true
       share: true
       related: true
-
-menu:
-  STUDY:
-    url: /categories/study/
-    weight: 1
-  ASSIGNMENT:
-    url: /categories/assignment/
-    weight: 2
-  ETC:
-    url: /categories/etc/
-    weight: 3
-
