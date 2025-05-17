@@ -1,17 +1,14 @@
 ---
-layout: category
-title: Study Posts
-category: study
-permalink: /study/
+layout: single
+title: "Study Posts"
+permalink: /categories/study/
+author_profile: true
+sidebar:
+nav: "main"
 ---
 
-{% assign assignment_posts = site.posts | where_exp:"post", "post.categories contains 'assignment'" %}
+{% assign study_posts = site.posts | where_exp: "post", "post.categories contains 'study'" %}
 
-<ul>
-  {% for post in assignment_posts %}
-    <li>
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      <span style="font-size: 0.8rem;"> - {{ post.date | date: "%Y-%m-%d" }}</span>
-    </li>
-  {% endfor %}
-</ul>
+{% for post in study_posts %}
+  {% include archive-single.html type="post" %}
+{% endfor %}
