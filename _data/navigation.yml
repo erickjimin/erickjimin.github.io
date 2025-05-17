@@ -1,12 +1,14 @@
 # main links
 main:
-  - title: "Quick-Start Guide"
-    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
-  # - title: "About"
-  #   url: https://mmistakes.github.io/minimal-mistakes/about/
-  # - title: "Sample Posts"
-  #   url: /year-archive/
-  # - title: "Sample Collections"
-  #   url: /collection-archive/
-  # - title: "Sitemap"
-  #   url: /sitemap/
+- title: STUDY
+  children:
+    - title: Week 1
+      url: /categories/week1/
+    - title: Week 2
+      url: /categories/week2/
+    - title: Week 3
+      url: /categories/week3/
+- title: ASSIGNMENT
+  url: /assignment/
+- title: ETC
+  url: /etc/
