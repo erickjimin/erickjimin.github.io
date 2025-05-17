@@ -1,8 +1,9 @@
-# main links
-navigation:
+# _data/navigation.yml
+
 - title: STUDY
   url: /categories/study/
 - title: ASSIGNMENT
   url: /categories/assignment/
 - title: ETC
   url: /categories/etc/
+
