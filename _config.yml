@@ -20,6 +20,7 @@ rtl                      : # true, false (default) # turns direction of the page
 title                    : "CyberSecurity Log"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
+markdown: kramdown
 name                     : "Jimin"
 description              : "Thank you for visiting my Blog."
 url                      : "https://erickjimin.github.io"
