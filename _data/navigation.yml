@@ -1,8 +1,8 @@
 # _data/navigation.yml
 
-- title: "STUDY"
+- title: STUDY
   url: /categories/study/
-- title: "ASSIGNMENT"
+- title: ASSIGNMENT
   url: /categories/assignment/
-- title: "ETC"
+- title: ETC
   url: /categories/etc/
