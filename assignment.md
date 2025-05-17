@@ -1,6 +1,6 @@
 ---
 layout: category
-title: Assignmet Posts
+title: Assignment Posts
 category: assignment
-permalink: /assignment/
+permalink: /categories/assignment/
 ---
