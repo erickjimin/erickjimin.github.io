@@ -1,9 +1,7 @@
-# _data/navigation.yml
-
-
-- title: STUDY
-  url: /categories/study/
-- title: ASSIGNMENT
-  url: /categories/assignment/
-- title: ETC
-  url: /categories/etc/
+main:
+  - title: "STUDY"
+    url: /categories/study/
+  - title: "ASSIGNMENT"
+    url: /categories/assignment/
+  - title: "ETC"
+    url: /categories/etc/
