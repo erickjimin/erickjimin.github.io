@@ -1,6 +1,6 @@
 ---
 layout: category
-title: ETC Posts
+title: ETC Posts !!!
 category: etc
 permalink: /etc/
 ---
