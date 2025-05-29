@@ -12,7 +12,63 @@ toc_label: "On this page"
 toc_sticky: true
 ---
 
-## Assignment 6 - 1 / Extracting Only doldol's Data
+# Assignment 6 - 1 / Extracting Only doldol's Data
 
-1. Identify the SQL Injection point
+## (1). Identify the SQL Injection point
+   
+![스크린샷 2025-05-29 120037](https://github.com/user-attachments/assets/a7bf66d0-a58e-470b-b149-ac64d4603cd6)
+
+By injecting a condition that always returns true (' OR '1'='1), all user accounts were displayed, confirming that the input is directly inserted into the SQL query.
+
+## (2) Use ORDER BY to find the number of columns
+
+Try injecting:
+
+```
+1234' order by [num] #
+```
+
+![image](https://github.com/user-attachments/assets/5bac249a-d89f-431d-8ddd-eed745916420)
+
+- No error occurs for Order by 1 to 4
+- However order by 5 makes the error
+  
+This tells us that the query has exactly 4 columns, since trying to sort by a non-existent fifth column causes a failure.
+
+## (3) Use UNION SELECT to determine which columns are displayed
+
+![image](https://github.com/user-attachments/assets/192e5e74-9c6b-4b59-be53-ab9bb6cd305c)
+
+Each number (1, 2, 3, 4) is displayed in a different column on the page.
+This confirms that **all four columns** are reflected in the output, meaning we can use any of them to display extracted data later (like usernames, emails, flags, etc.).
+
+
+## (4) Use database() to find the current database name
+
+![image](https://github.com/user-attachments/assets/e91cf7b5-2d25-409c-a2bb-c9815ce61339)
+
+Try injecting:
+
+```
+1234' union select datbase(), 2, 3, 4#
+```
+
+
+## (5) Use information_schema.tables to list all table names
+
+## (6) Use information_schema.columns to list all column names
+
+## (7) Finally, use UNION SELECT to extract the data
+
+
+---
+
+# Assignment 6 - 2 / CTF SQL Injection 1
+
+
+
+
+
+
+
 
